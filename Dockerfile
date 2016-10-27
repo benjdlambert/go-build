@@ -1,5 +1,5 @@
 FROM golang:1.7.3-alpine
-RUN apk add --update curl && \
+RUN apk add --update curl bash git openssh && \
     rm -rf /var/cache/apk/*
 
 # Add Glide for Dependency Management
