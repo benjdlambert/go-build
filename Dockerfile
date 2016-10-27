@@ -1,9 +1,8 @@
 FROM golang:1.7.3-alpine
 
 RUN mkdir /builder
-WORKDIR /builder
-COPY builder.sh .
-RUN chmod +x ./builder.sh
+COPY builder.sh /builder/run.sh
+RUN chmod +x /builder/run.sh
 
-CMD ["/builder/builder.sh"]
+ENTRYPOINT ["/bin/sh", "/builder/run.sh"]
 
